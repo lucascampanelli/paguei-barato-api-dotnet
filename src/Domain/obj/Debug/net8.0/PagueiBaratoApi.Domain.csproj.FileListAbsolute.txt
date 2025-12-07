@@ -1,0 +1,12 @@
+/workspaces/paguei-barato-api-dotnet/src/Domain/bin/Debug/net8.0/PagueiBaratoApi.Domain.deps.json
+/workspaces/paguei-barato-api-dotnet/src/Domain/bin/Debug/net8.0/PagueiBaratoApi.Domain.dll
+/workspaces/paguei-barato-api-dotnet/src/Domain/bin/Debug/net8.0/PagueiBaratoApi.Domain.pdb
+/workspaces/paguei-barato-api-dotnet/src/Domain/obj/Debug/net8.0/PagueiBaratoApi.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/paguei-barato-api-dotnet/src/Domain/obj/Debug/net8.0/PagueiBaratoApi.Domain.AssemblyInfoInputs.cache
+/workspaces/paguei-barato-api-dotnet/src/Domain/obj/Debug/net8.0/PagueiBaratoApi.Domain.AssemblyInfo.cs
+/workspaces/paguei-barato-api-dotnet/src/Domain/obj/Debug/net8.0/PagueiBaratoApi.Domain.csproj.CoreCompileInputs.cache
+/workspaces/paguei-barato-api-dotnet/src/Domain/obj/Debug/net8.0/PagueiBaratoApi.Domain.sourcelink.json
+/workspaces/paguei-barato-api-dotnet/src/Domain/obj/Debug/net8.0/PagueiBaratoApi.Domain.dll
+/workspaces/paguei-barato-api-dotnet/src/Domain/obj/Debug/net8.0/refint/PagueiBaratoApi.Domain.dll
+/workspaces/paguei-barato-api-dotnet/src/Domain/obj/Debug/net8.0/PagueiBaratoApi.Domain.pdb
+/workspaces/paguei-barato-api-dotnet/src/Domain/obj/Debug/net8.0/ref/PagueiBaratoApi.Domain.dll

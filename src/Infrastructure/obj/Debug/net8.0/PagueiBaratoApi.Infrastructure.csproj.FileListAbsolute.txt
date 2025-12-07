@@ -1,0 +1,12 @@
+/workspaces/paguei-barato-api-dotnet/src/Infrastructure/bin/Debug/net8.0/PagueiBaratoApi.Infrastructure.deps.json
+/workspaces/paguei-barato-api-dotnet/src/Infrastructure/bin/Debug/net8.0/PagueiBaratoApi.Infrastructure.dll
+/workspaces/paguei-barato-api-dotnet/src/Infrastructure/bin/Debug/net8.0/PagueiBaratoApi.Infrastructure.pdb
+/workspaces/paguei-barato-api-dotnet/src/Infrastructure/obj/Debug/net8.0/PagueiBaratoApi.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/paguei-barato-api-dotnet/src/Infrastructure/obj/Debug/net8.0/PagueiBaratoApi.Infrastructure.AssemblyInfoInputs.cache
+/workspaces/paguei-barato-api-dotnet/src/Infrastructure/obj/Debug/net8.0/PagueiBaratoApi.Infrastructure.AssemblyInfo.cs
+/workspaces/paguei-barato-api-dotnet/src/Infrastructure/obj/Debug/net8.0/PagueiBaratoApi.Infrastructure.csproj.CoreCompileInputs.cache
+/workspaces/paguei-barato-api-dotnet/src/Infrastructure/obj/Debug/net8.0/PagueiBaratoApi.Infrastructure.sourcelink.json
+/workspaces/paguei-barato-api-dotnet/src/Infrastructure/obj/Debug/net8.0/PagueiBaratoApi.Infrastructure.dll
+/workspaces/paguei-barato-api-dotnet/src/Infrastructure/obj/Debug/net8.0/refint/PagueiBaratoApi.Infrastructure.dll
+/workspaces/paguei-barato-api-dotnet/src/Infrastructure/obj/Debug/net8.0/PagueiBaratoApi.Infrastructure.pdb
+/workspaces/paguei-barato-api-dotnet/src/Infrastructure/obj/Debug/net8.0/ref/PagueiBaratoApi.Infrastructure.dll

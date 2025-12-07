@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "PagueiBaratoApi.Infrastructure/1.0.0": {
+        "runtime": {
+          "PagueiBaratoApi.Infrastructure.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PagueiBaratoApi.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

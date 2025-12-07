@@ -1,0 +1,53 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "PagueiBaratoApi.Application/1.0.0": {
+        "dependencies": {
+          "PagueiBaratoApi.Domain": "1.0.0",
+          "PagueiBaratoApi.Infrastructure": "1.0.0"
+        },
+        "runtime": {
+          "PagueiBaratoApi.Application.dll": {}
+        }
+      },
+      "PagueiBaratoApi.Domain/1.0.0": {
+        "runtime": {
+          "PagueiBaratoApi.Domain.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "PagueiBaratoApi.Infrastructure/1.0.0": {
+        "runtime": {
+          "PagueiBaratoApi.Infrastructure.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PagueiBaratoApi.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PagueiBaratoApi.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PagueiBaratoApi.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
