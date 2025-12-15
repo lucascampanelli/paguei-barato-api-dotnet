@@ -148,7 +148,11 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "/workspaces/paguei-barato-api-dotnet/src/Domain/PagueiBaratoApi.Domain.csproj": {
+                "projectPath": "/workspaces/paguei-barato-api-dotnet/src/Domain/PagueiBaratoApi.Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -165,6 +169,16 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.22, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[8.0.11, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

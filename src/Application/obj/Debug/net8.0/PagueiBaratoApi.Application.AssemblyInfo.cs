@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PagueiBaratoApi.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7ec8ca37b67e34520c41195f353c53b4e6182654")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4b9fdda3fa5e995d28ea24338724e2185bc0a4e3")]
 [assembly: System.Reflection.AssemblyProductAttribute("PagueiBaratoApi.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PagueiBaratoApi.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
