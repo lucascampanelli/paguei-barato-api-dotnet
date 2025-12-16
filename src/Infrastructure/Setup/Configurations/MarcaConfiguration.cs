@@ -4,19 +4,17 @@ using PagueiBaratoApi.Domain.Entidades;
 
 namespace PagueiBaratoApi.Infrastructure.Setup.Configurations;
 
-public class UsuarioConfiguration : IEntityTypeConfiguration<Usuario>
+public class MarcaConfiguration : IEntityTypeConfiguration<Marca>
 {
-    public void Configure(EntityTypeBuilder<Usuario> builder)
+    public void Configure(EntityTypeBuilder<Marca> builder)
     {
         builder.Property(x => x.Nome)
-            .HasMaxLength(160);
+            .HasMaxLength(96);
 
-        builder.Property(x => x.Email)
-            .HasMaxLength(160);
-
-        builder.Property(x => x.Cep)
-            .IsRequired(false)
-            .HasMaxLength(9);
+        builder.HasOne(x => x.CriadoPor)
+            .WithMany()
+            .HasForeignKey(x => x.CriadoPorId)
+            .OnDelete(DeleteBehavior.Restrict);
 
         builder.Property(x => x.CriadoEm)
             .HasDefaultValueSql("NOW()");

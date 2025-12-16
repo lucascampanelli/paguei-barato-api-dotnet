@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PagueiBaratoApi.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4b9fdda3fa5e995d28ea24338724e2185bc0a4e3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+064fe4406fdcddaf192596a70d14e8ea55985fc5")]
 [assembly: System.Reflection.AssemblyProductAttribute("PagueiBaratoApi.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PagueiBaratoApi.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

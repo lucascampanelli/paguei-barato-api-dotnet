@@ -6,7 +6,7 @@ public class Indicacao
     public int EstoqueId { get; set; }
     public Estoque Estoque { get; set; }
     public decimal Preco { get; set; }
-    public DateTime IndicadoEm { get; set; }
-    public int IndicadoPorId { get; set; }
-    public Usuario IndicadoPor { get; set; }
+    public DateTime CriadoEm { get; set; }
+    public int CriadoPorId { get; set; }
+    public Usuario CriadoPor { get; set; }
 }
