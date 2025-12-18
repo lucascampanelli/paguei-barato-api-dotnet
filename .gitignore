@@ -1,0 +1,111 @@
+# .gitignore para projetos ASP.NET / .NET
+# Gerado para um projeto ASP.NET Core — contém padrões comuns
+
+# Build outputs
+**/bin/
+**/obj/
+**/out/
+publish/
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Visual Studio Code workspace
+.vscode/
+
+# Rider
+.idea/
+*.sln.iml
+
+# NuGet
+# Packages folder (legacy)
+packages/
+# NuGet local cache
+*.nupkg
+.nuget/
+
+# Runtime files
+*.dll
+*.exe
+*.app
+*.so
+*.dylib
+*.pdb
+*.mdb
+
+# Logs
+*.log
+logs/
+
+# Publish artifacts
+*.Publish.xml
+*.azurepubxml
+publish/
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userprefs
+
+# Database files
+*.mdf
+*.ldf
+*.sqlite
+*.db
+
+# ASP.NET Core specifics
+# Ignore local development settings and secrets
+appsettings*.Development.json
+appsettings*.Local.json
+local.settings.json
+secrets.json
+*.usersecrets
+
+# Secret storage folder used by some tools
+.aspnet/  
+
+# EF Migrations snapshot files (optional)
+*.Snapshot.cs
+
+# Test results
+TestResults/
+*.trx
+
+# Coverage
+coverage/
+*.coverage
+*.coveragexml
+coverage*.json
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# JetBrains Rider
+.idea/
+
+# Docker
+docker-compose.override.yml
+**/docker-compose.override.yml
+
+# Generated files
+**/*.generated.cs
+
+# Rider/IDE caches
+/.idea/
+
+# Dotnet user global tools cache
+/.dotnet/tools/
+
+# Ignore files created by Visual Studio's publish
+*.publishsettings
+
+# OS files
+.DS_Store
+Thumbs.db
+
