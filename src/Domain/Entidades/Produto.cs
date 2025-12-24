@@ -9,6 +9,6 @@ public class Produto
     public IEnumerable<Categoria> Categorias { get; set; }
     public Dictionary<string, string> Atributos { get; set; }
     public DateTime CriadoEm { get; set; }
-    public int CriadoPorId { get; set; }
+    public Guid CriadoPorId { get; set; }
     public Usuario CriadoPor { get; set; }
 }

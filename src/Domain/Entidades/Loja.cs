@@ -12,6 +12,6 @@ public class Loja
     public string Estado { get; set; }
     public string Cep { get; set; }
     public DateTime CriadoEm { get; set; }
-    public int CriadoPorId { get; set; }
+    public Guid CriadoPorId { get; set; }
     public Usuario CriadoPor { get; set; }
 }

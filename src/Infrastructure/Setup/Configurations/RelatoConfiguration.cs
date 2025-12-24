@@ -4,9 +4,9 @@ using PagueiBaratoApi.Domain.Entidades;
 
 namespace PagueiBaratoApi.Infrastructure.Setup.Configurations;
 
-public class IndicacaoConfiguration : IEntityTypeConfiguration<Indicacao>
+public class RelatoConfiguration : IEntityTypeConfiguration<Relato>
 {
-    public void Configure(EntityTypeBuilder<Indicacao> builder)
+    public void Configure(EntityTypeBuilder<Relato> builder)
     {
         builder.HasOne(x => x.Estoque)
             .WithMany()

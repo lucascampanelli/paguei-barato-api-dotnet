@@ -6,6 +6,6 @@ public class Ramo
     public string Nome { get; set; }
     public string Descricao { get; set; }
     public DateTime CriadoEm { get; set; }
-    public int CriadoPorId { get; set; }
+    public Guid CriadoPorId { get; set; }
     public Usuario CriadoPor { get; set; }
 }
