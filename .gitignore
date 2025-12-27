@@ -15,7 +15,7 @@ publish/
 *.sln.docstates
 
 # Visual Studio Code workspace
-# .vscode/
+.vscode/
 
 # Rider
 .idea/
