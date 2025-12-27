@@ -1,10 +1,9 @@
-namespace PagueiBaratoApi.Domain.Entidades;
+namespace PagueiBaratoApi.Domain.Entities;
 
-public class Categoria
+public class Marca
 {
     public int Id { get; set; }
     public string Nome { get; set; }
-    public string Descricao { get; set; }
     public DateTime CriadoEm { get; set; }
     public Guid CriadoPorId { get; set; }
     public Usuario CriadoPor { get; set; }

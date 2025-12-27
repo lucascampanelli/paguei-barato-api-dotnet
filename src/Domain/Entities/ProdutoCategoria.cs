@@ -1,4 +1,4 @@
-namespace PagueiBaratoApi.Domain.Entidades;
+namespace PagueiBaratoApi.Domain.Entities;
 
 public class ProdutoCategoria
 {

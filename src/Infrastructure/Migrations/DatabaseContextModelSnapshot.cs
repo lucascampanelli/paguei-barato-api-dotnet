@@ -23,7 +23,7 @@ namespace PagueiBaratoApi.Infrastructure.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("PagueiBaratoApi.Domain.Entidades.Categoria", b =>
+            modelBuilder.Entity("PagueiBaratoApi.Domain.Entities.Categoria", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -55,7 +55,7 @@ namespace PagueiBaratoApi.Infrastructure.Migrations
                     b.ToTable("Categorias");
                 });
 
-            modelBuilder.Entity("PagueiBaratoApi.Domain.Entidades.Estoque", b =>
+            modelBuilder.Entity("PagueiBaratoApi.Domain.Entities.Estoque", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -88,7 +88,7 @@ namespace PagueiBaratoApi.Infrastructure.Migrations
                     b.ToTable("Estoques");
                 });
 
-            modelBuilder.Entity("PagueiBaratoApi.Domain.Entidades.Loja", b =>
+            modelBuilder.Entity("PagueiBaratoApi.Domain.Entities.Loja", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -146,7 +146,7 @@ namespace PagueiBaratoApi.Infrastructure.Migrations
                     b.ToTable("Lojas");
                 });
 
-            modelBuilder.Entity("PagueiBaratoApi.Domain.Entidades.LojaRamo", b =>
+            modelBuilder.Entity("PagueiBaratoApi.Domain.Entities.LojaRamo", b =>
                 {
                     b.Property<int>("LojaId")
                         .HasColumnType("integer");
@@ -161,7 +161,7 @@ namespace PagueiBaratoApi.Infrastructure.Migrations
                     b.ToTable("LojaRamo");
                 });
 
-            modelBuilder.Entity("PagueiBaratoApi.Domain.Entidades.Marca", b =>
+            modelBuilder.Entity("PagueiBaratoApi.Domain.Entities.Marca", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -189,7 +189,7 @@ namespace PagueiBaratoApi.Infrastructure.Migrations
                     b.ToTable("Marcas");
                 });
 
-            modelBuilder.Entity("PagueiBaratoApi.Domain.Entidades.Produto", b =>
+            modelBuilder.Entity("PagueiBaratoApi.Domain.Entities.Produto", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -226,7 +226,7 @@ namespace PagueiBaratoApi.Infrastructure.Migrations
                     b.ToTable("Produtos");
                 });
 
-            modelBuilder.Entity("PagueiBaratoApi.Domain.Entidades.ProdutoCategoria", b =>
+            modelBuilder.Entity("PagueiBaratoApi.Domain.Entities.ProdutoCategoria", b =>
                 {
                     b.Property<int>("CategoriaId")
                         .HasColumnType("integer");
@@ -241,7 +241,7 @@ namespace PagueiBaratoApi.Infrastructure.Migrations
                     b.ToTable("ProdutoCategoria");
                 });
 
-            modelBuilder.Entity("PagueiBaratoApi.Domain.Entidades.Ramo", b =>
+            modelBuilder.Entity("PagueiBaratoApi.Domain.Entities.Ramo", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -274,7 +274,7 @@ namespace PagueiBaratoApi.Infrastructure.Migrations
                     b.ToTable("Ramos");
                 });
 
-            modelBuilder.Entity("PagueiBaratoApi.Domain.Entidades.Relato", b =>
+            modelBuilder.Entity("PagueiBaratoApi.Domain.Entities.Relato", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -305,7 +305,7 @@ namespace PagueiBaratoApi.Infrastructure.Migrations
                     b.ToTable("Relatos");
                 });
 
-            modelBuilder.Entity("PagueiBaratoApi.Domain.Entidades.Usuario", b =>
+            modelBuilder.Entity("PagueiBaratoApi.Domain.Entities.Usuario", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -339,9 +339,9 @@ namespace PagueiBaratoApi.Infrastructure.Migrations
                     b.ToTable("Usuarios");
                 });
 
-            modelBuilder.Entity("PagueiBaratoApi.Domain.Entidades.Categoria", b =>
+            modelBuilder.Entity("PagueiBaratoApi.Domain.Entities.Categoria", b =>
                 {
-                    b.HasOne("PagueiBaratoApi.Domain.Entidades.Usuario", "CriadoPor")
+                    b.HasOne("PagueiBaratoApi.Domain.Entities.Usuario", "CriadoPor")
                         .WithMany()
                         .HasForeignKey("CriadoPorId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -350,21 +350,21 @@ namespace PagueiBaratoApi.Infrastructure.Migrations
                     b.Navigation("CriadoPor");
                 });
 
-            modelBuilder.Entity("PagueiBaratoApi.Domain.Entidades.Estoque", b =>
+            modelBuilder.Entity("PagueiBaratoApi.Domain.Entities.Estoque", b =>
                 {
-                    b.HasOne("PagueiBaratoApi.Domain.Entidades.Usuario", "CriadoPor")
+                    b.HasOne("PagueiBaratoApi.Domain.Entities.Usuario", "CriadoPor")
                         .WithMany()
                         .HasForeignKey("CriadoPorId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("PagueiBaratoApi.Domain.Entidades.Loja", "Loja")
+                    b.HasOne("PagueiBaratoApi.Domain.Entities.Loja", "Loja")
                         .WithMany()
                         .HasForeignKey("LojaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("PagueiBaratoApi.Domain.Entidades.Produto", "Produto")
+                    b.HasOne("PagueiBaratoApi.Domain.Entities.Produto", "Produto")
                         .WithMany()
                         .HasForeignKey("ProdutoId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -377,9 +377,9 @@ namespace PagueiBaratoApi.Infrastructure.Migrations
                     b.Navigation("Produto");
                 });
 
-            modelBuilder.Entity("PagueiBaratoApi.Domain.Entidades.Loja", b =>
+            modelBuilder.Entity("PagueiBaratoApi.Domain.Entities.Loja", b =>
                 {
-                    b.HasOne("PagueiBaratoApi.Domain.Entidades.Usuario", "CriadoPor")
+                    b.HasOne("PagueiBaratoApi.Domain.Entities.Usuario", "CriadoPor")
                         .WithMany()
                         .HasForeignKey("CriadoPorId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -388,24 +388,24 @@ namespace PagueiBaratoApi.Infrastructure.Migrations
                     b.Navigation("CriadoPor");
                 });
 
-            modelBuilder.Entity("PagueiBaratoApi.Domain.Entidades.LojaRamo", b =>
+            modelBuilder.Entity("PagueiBaratoApi.Domain.Entities.LojaRamo", b =>
                 {
-                    b.HasOne("PagueiBaratoApi.Domain.Entidades.Loja", null)
+                    b.HasOne("PagueiBaratoApi.Domain.Entities.Loja", null)
                         .WithMany()
                         .HasForeignKey("LojaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("PagueiBaratoApi.Domain.Entidades.Ramo", null)
+                    b.HasOne("PagueiBaratoApi.Domain.Entities.Ramo", null)
                         .WithMany()
                         .HasForeignKey("RamoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("PagueiBaratoApi.Domain.Entidades.Marca", b =>
+            modelBuilder.Entity("PagueiBaratoApi.Domain.Entities.Marca", b =>
                 {
-                    b.HasOne("PagueiBaratoApi.Domain.Entidades.Usuario", "CriadoPor")
+                    b.HasOne("PagueiBaratoApi.Domain.Entities.Usuario", "CriadoPor")
                         .WithMany()
                         .HasForeignKey("CriadoPorId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -414,15 +414,15 @@ namespace PagueiBaratoApi.Infrastructure.Migrations
                     b.Navigation("CriadoPor");
                 });
 
-            modelBuilder.Entity("PagueiBaratoApi.Domain.Entidades.Produto", b =>
+            modelBuilder.Entity("PagueiBaratoApi.Domain.Entities.Produto", b =>
                 {
-                    b.HasOne("PagueiBaratoApi.Domain.Entidades.Usuario", "CriadoPor")
+                    b.HasOne("PagueiBaratoApi.Domain.Entities.Usuario", "CriadoPor")
                         .WithMany()
                         .HasForeignKey("CriadoPorId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("PagueiBaratoApi.Domain.Entidades.Marca", "Marca")
+                    b.HasOne("PagueiBaratoApi.Domain.Entities.Marca", "Marca")
                         .WithMany()
                         .HasForeignKey("MarcaId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -433,24 +433,24 @@ namespace PagueiBaratoApi.Infrastructure.Migrations
                     b.Navigation("Marca");
                 });
 
-            modelBuilder.Entity("PagueiBaratoApi.Domain.Entidades.ProdutoCategoria", b =>
+            modelBuilder.Entity("PagueiBaratoApi.Domain.Entities.ProdutoCategoria", b =>
                 {
-                    b.HasOne("PagueiBaratoApi.Domain.Entidades.Categoria", null)
+                    b.HasOne("PagueiBaratoApi.Domain.Entities.Categoria", null)
                         .WithMany()
                         .HasForeignKey("CategoriaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("PagueiBaratoApi.Domain.Entidades.Produto", null)
+                    b.HasOne("PagueiBaratoApi.Domain.Entities.Produto", null)
                         .WithMany()
                         .HasForeignKey("ProdutoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("PagueiBaratoApi.Domain.Entidades.Ramo", b =>
+            modelBuilder.Entity("PagueiBaratoApi.Domain.Entities.Ramo", b =>
                 {
-                    b.HasOne("PagueiBaratoApi.Domain.Entidades.Usuario", "CriadoPor")
+                    b.HasOne("PagueiBaratoApi.Domain.Entities.Usuario", "CriadoPor")
                         .WithMany()
                         .HasForeignKey("CriadoPorId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -459,15 +459,15 @@ namespace PagueiBaratoApi.Infrastructure.Migrations
                     b.Navigation("CriadoPor");
                 });
 
-            modelBuilder.Entity("PagueiBaratoApi.Domain.Entidades.Relato", b =>
+            modelBuilder.Entity("PagueiBaratoApi.Domain.Entities.Relato", b =>
                 {
-                    b.HasOne("PagueiBaratoApi.Domain.Entidades.Usuario", "CriadoPor")
+                    b.HasOne("PagueiBaratoApi.Domain.Entities.Usuario", "CriadoPor")
                         .WithMany()
                         .HasForeignKey("CriadoPorId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("PagueiBaratoApi.Domain.Entidades.Estoque", "Estoque")
+                    b.HasOne("PagueiBaratoApi.Domain.Entities.Estoque", "Estoque")
                         .WithMany()
                         .HasForeignKey("EstoqueId")
                         .OnDelete(DeleteBehavior.Cascade)

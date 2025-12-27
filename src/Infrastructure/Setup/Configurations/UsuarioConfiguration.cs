@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using PagueiBaratoApi.Domain.Entidades;
+using PagueiBaratoApi.Domain.Entities;
 
 namespace PagueiBaratoApi.Infrastructure.Setup.Configurations;
 

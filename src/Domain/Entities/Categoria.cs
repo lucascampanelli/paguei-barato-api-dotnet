@@ -1,6 +1,6 @@
-namespace PagueiBaratoApi.Domain.Entidades;
+namespace PagueiBaratoApi.Domain.Entities;
 
-public class Ramo
+public class Categoria
 {
     public int Id { get; set; }
     public string Nome { get; set; }
