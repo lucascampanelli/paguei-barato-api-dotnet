@@ -20,6 +20,12 @@ public class UsuarioApplication : IUsuarioApplication
         var emailLowercase = requestDto.Email.ToLower();
         var senhaHash = _senhaCore.AplicarHashSenha(requestDto.Senha);
 
-        return _usuarioCore.CriarAsync(requestDto);
+        var usuarioDto = requestDto with
+        {
+            Email = emailLowercase,
+            Senha = senhaHash
+        };
+
+        return _usuarioCore.CriarAsync(usuarioDto);
     }
 }
