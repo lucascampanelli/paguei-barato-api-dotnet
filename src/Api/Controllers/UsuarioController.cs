@@ -16,9 +16,16 @@ public class UsuarioController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> CriarUsuario([FromBody] UsuarioCadastrarRequestDto requestDto)
+    public async Task<IActionResult> CadastrarAsync([FromBody] UsuarioCadastrarRequestDto requestDto)
     {
         var result = await _usuarioApplication.CadastrarAsync(requestDto);
-        return CreatedAtAction(nameof(CriarUsuario), result);
+        return CreatedAtAction(nameof(CadastrarAsync), result);
+    }
+
+    [HttpPost("autenticar")]
+    public async Task<IActionResult> AutenticarAsync([FromBody] UsuarioAutenticarRequestDto requestDto)
+    {
+        var result = await _usuarioApplication.AutenticarAsync(requestDto);
+        return Ok(result);
     }
 }

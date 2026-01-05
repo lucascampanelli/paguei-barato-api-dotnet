@@ -5,4 +5,5 @@ namespace PagueiBaratoApi.Core.Interfaces;
 public interface IUsuarioCore
 {
     Task<UsuarioResponseDto> CriarAsync(UsuarioCadastrarRequestDto requestDto);
+    Task<UsuarioObterPorEmailDto?> ObterPorEmailAsync(string email);
 }

@@ -28,4 +28,27 @@ public class UsuarioApplication : IUsuarioApplication
 
         return _usuarioCore.CriarAsync(usuarioDto);
     }
+
+    public async Task<UsuarioAutenticarResponseDto> AutenticarAsync(UsuarioAutenticarRequestDto requestDto)
+    {
+        var emailLowercase = requestDto.Email.ToLower();
+
+        var usuario = await _usuarioCore.ObterPorEmailAsync(emailLowercase);
+        if (usuario == null)
+            throw new UnauthorizedAccessException();
+
+        var senhaValida = _senhaCore.VerificarSenha(usuario.Senha, requestDto.Senha);
+        if (!senhaValida)
+            throw new UnauthorizedAccessException();
+
+        return new UsuarioAutenticarResponseDto
+        {
+            Id = usuario.Id,
+            Nome = usuario.Nome,
+            Email = usuario.Email,
+            CriadoEm = usuario.CriadoEm,
+            Token = "token",
+            RefreshToken = "refresh_token"
+        };
+    }
 }

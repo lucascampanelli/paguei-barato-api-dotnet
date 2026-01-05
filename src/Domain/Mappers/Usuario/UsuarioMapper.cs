@@ -26,4 +26,17 @@ public static class UsuarioMapper
             CriadoEm = usuario.CriadoEm
         };
     }
+
+    public static UsuarioObterPorEmailDto ToObterPorEmailDto(this Entities.Usuario usuario)
+    {
+        return new UsuarioObterPorEmailDto
+        {
+            Id = usuario.Id,
+            Nome = usuario.Nome,
+            Email = usuario.Email,
+            Senha = usuario.Senha,
+            Cep = usuario.Cep,
+            CriadoEm = usuario.CriadoEm
+        };
+    }
 }

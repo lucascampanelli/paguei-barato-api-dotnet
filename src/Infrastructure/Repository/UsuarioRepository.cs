@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using PagueiBaratoApi.Domain.Dtos.Usuario;
 using PagueiBaratoApi.Domain.Mappers.Usuario;
 using PagueiBaratoApi.Infrastructure.Repository.Interface;
@@ -20,5 +21,16 @@ public class UsuarioRepository : IUsuarioRepository
         await _dbContext.Usuarios.AddAsync(usuarioEntity);
         await _dbContext.SaveChangesAsync();
         return usuarioEntity.ToResponseDto();
+    }
+
+    public async Task<UsuarioObterPorEmailDto?> ObterPorEmailAsync(string email)
+    {
+        var usuarioEntity = await _dbContext.Usuarios
+            .FirstOrDefaultAsync(u => u.Email == email);
+
+        if (usuarioEntity == null)
+            return null;
+
+        return usuarioEntity.ToObterPorEmailDto();
     }
 }
