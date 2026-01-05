@@ -1,6 +1,6 @@
 namespace PagueiBaratoApi.Domain.Dtos.Usuario;
 
-public record class UsuarioCriarRequestDto
+public record class UsuarioCadastrarRequestDto
 {
     public string Nome { get; init; }
     public string Email { get; init; }

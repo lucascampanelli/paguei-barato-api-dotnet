@@ -19,9 +19,4 @@
     <ProjectReference Include="..\Application\PagueiBaratoApi.Application.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers/" />
-    <Folder Include="Setup/" />
-  </ItemGroup>
-
 </Project>

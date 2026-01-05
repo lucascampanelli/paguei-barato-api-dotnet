@@ -1,20 +1,25 @@
-using PagueiBaratoApi.Domain.Applications;
+using PagueiBaratoApi.Application.Interfaces;
+using PagueiBaratoApi.Core.Interfaces;
 using PagueiBaratoApi.Domain.Dtos.Usuario;
-using PagueiBaratoApi.Domain.Repository;
 
 namespace PagueiBaratoApi.Application;
 
 public class UsuarioApplication : IUsuarioApplication
 {
-    private readonly IUsuarioRepository _usuarioRepository;
+    private readonly IUsuarioCore _usuarioCore;
+    private readonly ISenhaCore _senhaCore;
 
-    public UsuarioApplication(IUsuarioRepository usuarioRepository)
+    public UsuarioApplication(IUsuarioCore usuarioCore, ISenhaCore senhaCore)
     {
-        _usuarioRepository = usuarioRepository;
+        _usuarioCore = usuarioCore;
+        _senhaCore = senhaCore;
     }
 
-    public Task<UsuarioResponseDto> CriarAsync(UsuarioCriarRequestDto requestDto)
+    public Task<UsuarioResponseDto> CadastrarAsync(UsuarioCadastrarRequestDto requestDto)
     {
-        return _usuarioRepository.CriarAsync(requestDto);
+        var emailLowercase = requestDto.Email.ToLower();
+        var senhaHash = _senhaCore.AplicarHashSenha(requestDto.Senha);
+
+        return _usuarioCore.CriarAsync(requestDto);
     }
 }

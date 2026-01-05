@@ -8,7 +8,9 @@ builder.Services.AddSwaggerGen();
 builder.Services.ConfigureDatabase(builder.Configuration);
 builder.Services.AddControllers();
 builder.Services.AddApplications();
+builder.Services.AddCore();
 builder.Services.AddRepositories();
+builder.Services.AddPasswordHasher();
 
 var app = builder.Build();
 

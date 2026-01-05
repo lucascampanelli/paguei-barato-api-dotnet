@@ -4,7 +4,7 @@ namespace PagueiBaratoApi.Domain.Mappers.Usuario;
 
 public static class UsuarioMapper
 {
-    public static Entities.Usuario ToEntity(this UsuarioCriarRequestDto usuario)
+    public static Entities.Usuario ToEntity(this UsuarioCadastrarRequestDto usuario)
     {
         return new Entities.Usuario
         {

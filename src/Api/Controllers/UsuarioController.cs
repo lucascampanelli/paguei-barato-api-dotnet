@@ -1,6 +1,5 @@
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using PagueiBaratoApi.Domain.Applications;
+using PagueiBaratoApi.Application.Interfaces;
 using PagueiBaratoApi.Domain.Dtos.Usuario;
 
 namespace PagueiBaratoApi.Api.Controllers;
@@ -17,9 +16,9 @@ public class UsuarioController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> CriarUsuario([FromBody] UsuarioCriarRequestDto requestDto)
+    public async Task<IActionResult> CriarUsuario([FromBody] UsuarioCadastrarRequestDto requestDto)
     {
-        var result = await _usuarioApplication.CriarAsync(requestDto);
+        var result = await _usuarioApplication.CadastrarAsync(requestDto);
         return CreatedAtAction(nameof(CriarUsuario), result);
     }
 }

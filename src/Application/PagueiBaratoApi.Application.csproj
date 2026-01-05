@@ -2,7 +2,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Domain\PagueiBaratoApi.Domain.csproj" />
-    <ProjectReference Include="..\Infrastructure\PagueiBaratoApi.Infrastructure.csproj" />
+    <ProjectReference Include="..\Core\PagueiBaratoApi.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Interfaces/" />
   </ItemGroup>
 
   <PropertyGroup>
