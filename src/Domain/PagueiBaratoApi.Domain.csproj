@@ -9,6 +9,7 @@
   <ItemGroup>
     <Folder Include="Mappers/" />
     <Folder Include="Mappers/Usuario/" />
+    <Folder Include="Options/" />
   </ItemGroup>
 
 </Project>

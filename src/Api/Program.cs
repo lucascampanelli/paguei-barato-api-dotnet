@@ -1,9 +1,12 @@
 using PagueiBaratoApi.Api.Setup;
+using PagueiBaratoApi.Domain.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.Configure<Secrets>(builder.Configuration);
 
 builder.Services.ConfigureDatabase(builder.Configuration);
 builder.Services.AddControllers();
