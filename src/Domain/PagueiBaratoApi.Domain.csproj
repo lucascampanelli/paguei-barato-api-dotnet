@@ -7,9 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Mappers/" />
-    <Folder Include="Mappers/Usuario/" />
-    <Folder Include="Options/" />
+    <Folder Include="Dtos/RefreshToken/" />
+    <Folder Include="Mappers/RefreshToken/" />
   </ItemGroup>
 
 </Project>

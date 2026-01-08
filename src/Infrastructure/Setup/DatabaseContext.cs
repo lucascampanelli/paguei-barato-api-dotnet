@@ -12,6 +12,7 @@ public class DatabaseContext : DbContext
     public virtual DbSet<Marca> Marcas { get; set; }
     public virtual DbSet<Produto> Produtos { get; set; }
     public virtual DbSet<Ramo> Ramos { get; set; }
+    public virtual DbSet<RefreshToken> RefreshTokens { get; set; }
     public virtual DbSet<Relato> Relatos { get; set; }
     public virtual DbSet<Usuario> Usuarios { get; set; }
 
@@ -34,6 +35,7 @@ public class DatabaseContext : DbContext
         modelBuilder.ApplyConfiguration(new MarcaConfiguration());
         modelBuilder.ApplyConfiguration(new ProdutoConfiguration());
         modelBuilder.ApplyConfiguration(new RamoConfiguration());
+        modelBuilder.ApplyConfiguration(new RefreshTokenConfiguration());
         modelBuilder.ApplyConfiguration(new RelatoConfiguration());
         modelBuilder.ApplyConfiguration(new UsuarioConfiguration());
     }
