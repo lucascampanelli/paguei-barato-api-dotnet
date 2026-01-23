@@ -9,6 +9,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.Configure<Secrets>(builder.Configuration);
 
 builder.Services.ConfigureDatabase(builder.Configuration);
+builder.Services.ConfigureAuthentication(builder.Configuration);
+
 builder.Services.AddControllers();
 builder.Services.AddApplications();
 builder.Services.AddCore();
@@ -24,6 +26,9 @@ if (app.Environment.IsDevelopment())
 }
 
 // app.UseHttpsRedirection();
+
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapControllers();
 app.Run();

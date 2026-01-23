@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PagueiBaratoApi.Application.Interfaces;
 using PagueiBaratoApi.Domain.Dtos.Usuario;
@@ -13,6 +14,13 @@ public class UsuarioController : ControllerBase
     public UsuarioController(IUsuarioApplication usuarioApplication)
     {
         _usuarioApplication = usuarioApplication;
+    }
+
+    [HttpGet("ping")]
+    [Authorize]
+    public IActionResult Ping()
+    {
+        return Ok("Pong");
     }
 
     [HttpPost]

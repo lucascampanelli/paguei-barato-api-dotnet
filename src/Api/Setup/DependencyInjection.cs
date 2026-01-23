@@ -20,10 +20,12 @@ public static class DependencyInjection
     {
         services.AddScoped<ISenhaCore, SenhaCore>();
         services.AddScoped<IUsuarioCore, UsuarioCore>();
+        services.AddScoped<ITokenCore, TokenCore>();
     }
 
     public static void AddRepositories(this IServiceCollection services)
     {
+        services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
         services.AddScoped<IUsuarioRepository, UsuarioRepository>();
     }
 
