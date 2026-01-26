@@ -11,7 +11,10 @@ builder.Services.Configure<Secrets>(builder.Configuration);
 builder.Services.ConfigureDatabase(builder.Configuration);
 builder.Services.ConfigureAuthentication(builder.Configuration);
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(options =>
+{
+    options.SuppressAsyncSuffixInActionNames = false;
+});
 builder.Services.AddApplications();
 builder.Services.AddCore();
 builder.Services.AddRepositories();

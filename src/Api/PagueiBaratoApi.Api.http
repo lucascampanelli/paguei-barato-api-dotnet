@@ -1,6 +1,22 @@
-@PagueiBaratoApi.Api_HostAddress = http://localhost:5117
+@HostAddress = http://localhost:5117/api
+@Token = 
 
-GET {{PagueiBaratoApi.Api_HostAddress}}/weatherforecast/
+# Marca
+
+### Criar
+POST {{HostAddress}}/marca   HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{Token}}
+
+{
+    "nome": "Marca Teste"
+}
+
+### Obter por Id
+GET {{HostAddress}}/marca/1   HTTP/1.1
 Accept: application/json
 
-###
+### Listar
+GET {{HostAddress}}/marca   HTTP/1.1
+Accept: application/json

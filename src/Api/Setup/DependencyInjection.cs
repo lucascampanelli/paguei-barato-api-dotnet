@@ -13,6 +13,7 @@ public static class DependencyInjection
 {
     public static void AddApplications(this IServiceCollection services)
     {
+        services.AddScoped<IMarcaApplication, MarcaApplication>();
         services.AddScoped<IUsuarioApplication, UsuarioApplication>();
     }
 
@@ -25,6 +26,7 @@ public static class DependencyInjection
 
     public static void AddRepositories(this IServiceCollection services)
     {
+        services.AddScoped<IMarcaRepository, MarcaRepository>();
         services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
         services.AddScoped<IUsuarioRepository, UsuarioRepository>();
     }

@@ -7,7 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Dtos/Marca/" />
     <Folder Include="Dtos/RefreshToken/" />
+    <Folder Include="Mappers/Marca/" />
     <Folder Include="Mappers/RefreshToken/" />
   </ItemGroup>
 
