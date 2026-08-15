@@ -1,33 +1,24 @@
 using PagueiBaratoApi.Application.Interfaces;
+using PagueiBaratoApi.Core.Interfaces;
 using PagueiBaratoApi.Domain.Dtos.Marca;
-using PagueiBaratoApi.Infrastructure.Repository.Interface;
 
 namespace PagueiBaratoApi.Application;
 
 public class MarcaApplication : IMarcaApplication
 {
-    public readonly IMarcaRepository _marcaRepository;
+    public readonly IMarcaCore _marcaCore;
 
-    public MarcaApplication(IMarcaRepository marcaRepository)
+    public MarcaApplication(IMarcaCore marcaCore)
     {
-        _marcaRepository = marcaRepository;
+        _marcaCore = marcaCore;
     }
 
     public async Task<MarcaResponseDto> CriarAsync(MarcaCriarRequestDto requestDto, Guid criadoPorId)
-    {
-        return await _marcaRepository.CriarAsync(requestDto, criadoPorId);
-    }
+        => await _marcaCore.CriarAsync(requestDto, criadoPorId);
 
     public async Task<MarcaResponseDto> ObterPorIdAsync(int id)
-    {
-        var marca =  await _marcaRepository.ObterPorIdAsync(id);
-        if (marca == null)
-            throw new Exception("Marca não encontrada.");
-        return marca;
-    }
+        => await _marcaCore.ObterPorIdAsync(id) ?? throw new Exception("Marca não encontrada.");
 
     public async Task<IEnumerable<MarcaResponseDto>> ListarAsync(MarcaListarRequestDto? requestDto = null)
-    {
-        return await _marcaRepository.ListarAsync(requestDto);
-    }
+        => await _marcaCore.ListarAsync(requestDto);
 }

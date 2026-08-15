@@ -6,9 +6,9 @@ using PagueiBaratoApi.Domain.Dtos.Marca;
 
 namespace PagueiBaratoApi.Api.Controllers;
 
-[Route("api/[controller]")]
-[ApiController]
 [Authorize]
+[ApiController]
+[Route("api/[controller]")]
 public class MarcaController : ControllerBase
 {
     private readonly IMarcaApplication _marcaApplication;

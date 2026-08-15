@@ -13,13 +13,9 @@ public class UsuarioCore : IUsuarioCore
         _usuarioRepository = usuarioRepository;
     }
 
-    public Task<UsuarioResponseDto> CriarAsync(UsuarioCadastrarRequestDto requestDto)
-    {
-        return  _usuarioRepository.CriarAsync(requestDto);
-    }
+    public async Task<UsuarioResponseDto> CriarAsync(UsuarioCadastrarRequestDto requestDto)
+        => await _usuarioRepository.CriarAsync(requestDto);
 
-    public Task<UsuarioObterPorEmailDto?> ObterPorEmailAsync(string email)
-    {
-        return _usuarioRepository.ObterPorEmailAsync(email);
-    }
+    public async Task<UsuarioObterPorEmailDto?> ObterPorEmailAsync(string email)
+        => await _usuarioRepository.ObterPorEmailAsync(email);
 }

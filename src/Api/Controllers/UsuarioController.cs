@@ -4,8 +4,8 @@ using PagueiBaratoApi.Domain.Dtos.Usuario;
 
 namespace PagueiBaratoApi.Api.Controllers;
 
-[Route("api/[controller]")]
 [ApiController]
+[Route("api/[controller]")]
 public class UsuarioController : ControllerBase
 {
     private readonly IUsuarioApplication _usuarioApplication;

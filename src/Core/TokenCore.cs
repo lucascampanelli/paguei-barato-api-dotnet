@@ -47,22 +47,14 @@ public class TokenCore : ITokenCore
     }
 
     public string GerarRefreshToken()
-    {
-        return Convert.ToBase64String(Guid.NewGuid().ToByteArray());
-    }
+        => Convert.ToBase64String(Guid.NewGuid().ToByteArray());
 
     public async Task<RefreshTokenDto?> ObterRefreshTokenPorTokenAsync(string refreshToken)
-    {
-        return await _refreshTokenRepository.ObterPorTokenAsync(refreshToken);
-    }
+        => await _refreshTokenRepository.ObterPorTokenAsync(refreshToken);
 
     public async Task<RefreshTokenDto> SalvarRefreshTokenAsync(RefreshTokenDto refreshTokenDto)
-    {
-        return await _refreshTokenRepository.SalvarAsync(refreshTokenDto);
-    }
+        => await _refreshTokenRepository.SalvarAsync(refreshTokenDto);
 
     public async Task RemoverTodosRefreshTokensDoUsuarioAsync(Guid usuarioId)
-    {
-        await _refreshTokenRepository.RemoverTodosDoUsuarioAsync(usuarioId);
-    }
+        => await _refreshTokenRepository.RemoverTodosDoUsuarioAsync(usuarioId);
 }
