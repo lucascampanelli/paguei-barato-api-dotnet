@@ -6,7 +6,7 @@
       "type": "coreclr",
       "request": "launch",
       "preLaunchTask": "build",
-      "program": "${workspaceFolder}/src/Api/bin/Debug/net8.0/PagueiBaratoApi.Api.dll",
+      "program": "${workspaceFolder}/src/Api/bin/Debug/net10.0/PagueiBaratoApi.Api.dll",
       "args": [],
       "cwd": "${workspaceFolder}/src/Api",
       "stopAtEntry": false,

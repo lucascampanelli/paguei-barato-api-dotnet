@@ -14,19 +14,23 @@ public static class DependencyInjection
     public static void AddApplications(this IServiceCollection services)
     {
         services.AddScoped<IMarcaApplication, MarcaApplication>();
+        services.AddScoped<IProdutoApplication, ProdutoApplication>();
         services.AddScoped<IUsuarioApplication, UsuarioApplication>();
     }
 
     public static void AddCore(this IServiceCollection services)
     {
+        services.AddScoped<IMarcaCore, MarcaCore>();
+        services.AddScoped<IProdutoCore, ProdutoCore>();
         services.AddScoped<ISenhaCore, SenhaCore>();
-        services.AddScoped<IUsuarioCore, UsuarioCore>();
         services.AddScoped<ITokenCore, TokenCore>();
+        services.AddScoped<IUsuarioCore, UsuarioCore>();
     }
 
     public static void AddRepositories(this IServiceCollection services)
     {
         services.AddScoped<IMarcaRepository, MarcaRepository>();
+        services.AddScoped<IProdutoRepository, ProdutoRepository>();
         services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
         services.AddScoped<IUsuarioRepository, UsuarioRepository>();
     }
