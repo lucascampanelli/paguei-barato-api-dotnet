@@ -11,6 +11,7 @@ public class Loja
     public string Cidade { get; set; }
     public string Estado { get; set; }
     public string Cep { get; set; }
+    public string ImagemPath { get; set; }
     public DateTime CriadoEm { get; set; }
     public Guid CriadoPorId { get; set; }
     public Usuario CriadoPor { get; set; }

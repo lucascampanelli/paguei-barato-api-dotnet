@@ -8,6 +8,7 @@ public class Produto
     public Marca Marca { get; set; }
     public IEnumerable<Categoria> Categorias { get; set; }
     public Dictionary<string, string> Atributos { get; set; }
+    public string ImagemPath { get; set; }
     public DateTime CriadoEm { get; set; }
     public Guid CriadoPorId { get; set; }
     public Usuario CriadoPor { get; set; }

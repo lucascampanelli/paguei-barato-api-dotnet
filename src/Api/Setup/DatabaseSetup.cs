@@ -1,7 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-using PagueiBaratoApi.Infrastructure.Setup;
-using Npgsql.EntityFrameworkCore.PostgreSQL.Infrastructure;
 using Npgsql;
+using PagueiBaratoApi.Infrastructure.Setup;
 
 namespace PagueiBaratoApi.Api.Setup;
 

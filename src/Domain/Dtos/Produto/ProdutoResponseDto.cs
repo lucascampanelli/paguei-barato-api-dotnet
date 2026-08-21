@@ -11,6 +11,7 @@ public record ProdutoResponseDto
     public MarcaResponseDto Marca { get; init; }
     public IEnumerable<CategoriaResponseDto> Categorias { get; init; }
     public Dictionary<string, string> Atributos { get; init; }
+    public string ImagemUrl { get; init; }
     public DateTime CriadoEm { get; init; }
     public Guid CriadoPorId { get; init; }
 }
