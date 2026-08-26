@@ -1,4 +1,3 @@
-using Azure.Identity;
 using Microsoft.Extensions.Azure;
 using PagueiBaratoApi.Api.Setup;
 
@@ -22,6 +21,7 @@ builder.Services.AddControllers(options =>
 builder.Services.AddConfigurationOptions(builder.Configuration);
 builder.Services.AddApplications();
 builder.Services.AddCore();
+builder.Services.AddAdapters();
 builder.Services.AddRepositories();
 builder.Services.AddPasswordHasher();
 

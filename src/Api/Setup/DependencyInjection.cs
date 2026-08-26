@@ -5,6 +5,8 @@ using PagueiBaratoApi.Core;
 using PagueiBaratoApi.Core.Interfaces;
 using PagueiBaratoApi.Domain.Entities;
 using PagueiBaratoApi.Domain.Options;
+using PagueiBaratoApi.Infrastructure.Adapters;
+using PagueiBaratoApi.Infrastructure.Adapters.Interfaces;
 using PagueiBaratoApi.Infrastructure.Repository;
 using PagueiBaratoApi.Infrastructure.Repository.Interfaces;
 
@@ -32,6 +34,11 @@ public static class DependencyInjection
         services.AddScoped<ISenhaCore, SenhaCore>();
         services.AddScoped<ITokenCore, TokenCore>();
         services.AddScoped<IUsuarioCore, UsuarioCore>();
+    }
+
+    public static void AddAdapters(this IServiceCollection services)
+    {
+        services.AddScoped<IImagensAdapter, ImagensAdapter>();
     }
 
     public static void AddRepositories(this IServiceCollection services)
