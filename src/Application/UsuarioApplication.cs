@@ -12,14 +12,19 @@ public class UsuarioApplication : IUsuarioApplication
     private readonly IUsuarioCore _usuarioCore;
     private readonly ISenhaCore _senhaCore;
     private readonly ITokenCore _tokenCore;
-    private readonly IOptions<Secrets> _secrets;
+    private readonly IOptions<AuthTokenOptions> _authTokenOptions;
 
-    public UsuarioApplication(IUsuarioCore usuarioCore, ISenhaCore senhaCore, ITokenCore tokenCore, IOptions<Secrets> secrets)
+    public UsuarioApplication(
+        IUsuarioCore usuarioCore,
+        ISenhaCore senhaCore,
+        ITokenCore tokenCore,
+        IOptions<AuthTokenOptions> authTokenOptions
+    )
     {
         _usuarioCore = usuarioCore;
         _senhaCore = senhaCore;
         _tokenCore = tokenCore;
-        _secrets = secrets;
+        _authTokenOptions = authTokenOptions;
     }
 
     public Task<UsuarioResponseDto> CadastrarAsync(UsuarioCadastrarRequestDto requestDto)
@@ -53,7 +58,7 @@ public class UsuarioApplication : IUsuarioApplication
 
         await _tokenCore.RemoverTodosRefreshTokensDoUsuarioAsync(usuario.Id);
 
-        var diasParaExpirarRefreshToken = _secrets.Value.Token.DiasParaExpirarRefreshToken;
+        var diasParaExpirarRefreshToken = _authTokenOptions.Value.DiasParaExpirarRefreshToken;
         var refreshTokenDto = new RefreshTokenDto
         {
             Token = refreshToken,
@@ -85,7 +90,7 @@ public class UsuarioApplication : IUsuarioApplication
 
         await _tokenCore.RemoverTodosRefreshTokensDoUsuarioAsync(refreshTokenDto.UsuarioId);
 
-        var diasParaExpirarRefreshToken = _secrets.Value.Token.DiasParaExpirarRefreshToken;
+        var diasParaExpirarRefreshToken = _authTokenOptions.Value.DiasParaExpirarRefreshToken;
         var newRefreshTokenDto = new RefreshTokenDto
         {
             Token = newRefreshToken,

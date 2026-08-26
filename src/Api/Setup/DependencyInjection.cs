@@ -4,6 +4,7 @@ using PagueiBaratoApi.Application.Interfaces;
 using PagueiBaratoApi.Core;
 using PagueiBaratoApi.Core.Interfaces;
 using PagueiBaratoApi.Domain.Entities;
+using PagueiBaratoApi.Domain.Options;
 using PagueiBaratoApi.Infrastructure.Repository;
 using PagueiBaratoApi.Infrastructure.Repository.Interface;
 
@@ -11,6 +12,12 @@ namespace PagueiBaratoApi.Api.Setup;
 
 public static class DependencyInjection
 {
+    public static void AddConfigurationOptions(this IServiceCollection services, IConfiguration configuration)
+    {
+        services.Configure<AuthTokenOptions>(configuration.GetSection(AuthTokenOptions.SectionName));
+        services.Configure<AzureStorageOptions>(configuration.GetSection(AzureStorageOptions.SectionName));
+    }
+
     public static void AddApplications(this IServiceCollection services)
     {
         services.AddScoped<IMarcaApplication, MarcaApplication>();

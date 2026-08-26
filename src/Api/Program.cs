@@ -1,12 +1,16 @@
+using Azure.Identity;
+using Microsoft.Extensions.Azure;
 using PagueiBaratoApi.Api.Setup;
-using PagueiBaratoApi.Domain.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.Configure<Secrets>(builder.Configuration);
+builder.Services.AddAzureClients(clientBuilder =>
+{
+    clientBuilder.AddBlobServiceClient(builder.Configuration.GetConnectionString("AzureBlobStorage"));
+});
 
 builder.Services.ConfigureDatabase(builder.Configuration);
 builder.Services.ConfigureAuthentication(builder.Configuration);
@@ -15,6 +19,7 @@ builder.Services.AddControllers(options =>
 {
     options.SuppressAsyncSuffixInActionNames = false;
 });
+builder.Services.AddConfigurationOptions(builder.Configuration);
 builder.Services.AddApplications();
 builder.Services.AddCore();
 builder.Services.AddRepositories();

@@ -1,31 +1,31 @@
-using PagueiBaratoApi.Core.Interfaces;
-using PagueiBaratoApi.Domain.Options;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
-using System.Text;
-using System.Security.Claims;
-using System.IdentityModel.Tokens.Jwt;
-using PagueiBaratoApi.Infrastructure.Repository.Interface;
+using PagueiBaratoApi.Core.Interfaces;
 using PagueiBaratoApi.Domain.Dtos.RefreshToken;
+using PagueiBaratoApi.Domain.Options;
+using PagueiBaratoApi.Infrastructure.Repository.Interface;
 
 namespace PagueiBaratoApi.Core;
 
 public class TokenCore : ITokenCore
 {
     private readonly IRefreshTokenRepository _refreshTokenRepository;
-    private readonly IOptions<Secrets> _secrets;
+    private readonly IOptions<AuthTokenOptions> _authTokenOptions;
 
-    public TokenCore(IRefreshTokenRepository refreshTokenRepository, IOptions<Secrets> secrets)
+    public TokenCore(IRefreshTokenRepository refreshTokenRepository, IOptions<AuthTokenOptions> authTokenOptions)
     {
         _refreshTokenRepository = refreshTokenRepository;
-        _secrets = secrets;
+        _authTokenOptions = authTokenOptions;
     }
     public string GerarToken(Guid idUsuario)
     {
-        var issuer = _secrets.Value.Token.Issuer;
-        var secretKey = _secrets.Value.Token.Key;
-        var audience = _secrets.Value.Token.Audience;
-        var minutosParaExpirar = _secrets.Value.Token.MinutosParaExpirar;
+        var issuer = _authTokenOptions.Value.Issuer;
+        var secretKey = _authTokenOptions.Value.Key;
+        var audience = _authTokenOptions.Value.Audience;
+        var minutosParaExpirar = _authTokenOptions.Value.MinutosParaExpirar;
 
         var symmetricKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
         var signingCredentials = new SigningCredentials(symmetricKey, SecurityAlgorithms.HmacSha256);
