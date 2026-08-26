@@ -6,7 +6,7 @@ using PagueiBaratoApi.Core.Interfaces;
 using PagueiBaratoApi.Domain.Entities;
 using PagueiBaratoApi.Domain.Options;
 using PagueiBaratoApi.Infrastructure.Repository;
-using PagueiBaratoApi.Infrastructure.Repository.Interface;
+using PagueiBaratoApi.Infrastructure.Repository.Interfaces;
 
 namespace PagueiBaratoApi.Api.Setup;
 

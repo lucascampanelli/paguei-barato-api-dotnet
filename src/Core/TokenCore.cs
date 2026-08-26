@@ -6,7 +6,7 @@ using Microsoft.IdentityModel.Tokens;
 using PagueiBaratoApi.Core.Interfaces;
 using PagueiBaratoApi.Domain.Dtos.RefreshToken;
 using PagueiBaratoApi.Domain.Options;
-using PagueiBaratoApi.Infrastructure.Repository.Interface;
+using PagueiBaratoApi.Infrastructure.Repository.Interfaces;
 
 namespace PagueiBaratoApi.Core;
 

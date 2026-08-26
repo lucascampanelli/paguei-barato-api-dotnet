@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using PagueiBaratoApi.Domain.Dtos.RefreshToken;
 using PagueiBaratoApi.Domain.Mappers.RefreshToken;
-using PagueiBaratoApi.Infrastructure.Repository.Interface;
+using PagueiBaratoApi.Infrastructure.Repository.Interfaces;
 using PagueiBaratoApi.Infrastructure.Setup;
 
 namespace PagueiBaratoApi.Infrastructure.Repository;

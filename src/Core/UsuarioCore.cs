@@ -1,6 +1,6 @@
 using PagueiBaratoApi.Core.Interfaces;
 using PagueiBaratoApi.Domain.Dtos.Usuario;
-using PagueiBaratoApi.Infrastructure.Repository.Interface;
+using PagueiBaratoApi.Infrastructure.Repository.Interfaces;
 
 namespace PagueiBaratoApi.Core;
 

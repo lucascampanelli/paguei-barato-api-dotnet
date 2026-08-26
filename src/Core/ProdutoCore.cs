@@ -1,7 +1,7 @@
 
 using PagueiBaratoApi.Core.Interfaces;
 using PagueiBaratoApi.Domain.Dtos.Produto;
-using PagueiBaratoApi.Infrastructure.Repository.Interface;
+using PagueiBaratoApi.Infrastructure.Repository.Interfaces;
 
 namespace PagueiBaratoApi.Core;
 

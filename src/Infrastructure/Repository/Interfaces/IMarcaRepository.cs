@@ -1,6 +1,6 @@
 using PagueiBaratoApi.Domain.Dtos.Marca;
 
-namespace PagueiBaratoApi.Infrastructure.Repository.Interface;
+namespace PagueiBaratoApi.Infrastructure.Repository.Interfaces;
 
 public interface IMarcaRepository
 {
