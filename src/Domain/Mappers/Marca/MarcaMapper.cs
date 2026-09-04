@@ -19,9 +19,7 @@ public static class MarcaMapper
         return new MarcaResponseDto
         {
             Id = marca.Id,
-            Nome = marca.Nome,
-            CriadoEm = marca.CriadoEm,
-            CriadoPorId = marca.CriadoPorId
+            Nome = marca.Nome
         };
     }
 }

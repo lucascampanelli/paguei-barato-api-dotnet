@@ -6,18 +6,31 @@ namespace PagueiBaratoApi.Domain.Mappers.Produto;
 
 public static class ProdutoMapper
 {
-    public static ProdutoResponseDto ToResponseDto(this Entities.Produto produto)
+    public static ProdutoDetalhesDto ToDetalhesDto(this Entities.Produto produto)
+    {
+        return new ProdutoDetalhesDto
+        {
+            Id = produto.Id,
+            Nome = produto.Nome,
+            Marca = produto.Marca.ToResponseDto(),
+            Categorias = produto.Categorias.Select(c => c.ToResponseDto()).ToList(),
+            Atributos = produto.Atributos,
+            ImagemPath = produto.ImagemPath,
+            CriadoEm = produto.CriadoEm
+        };
+    }
+
+    public static ProdutoResponseDto ToResponseDto(this ProdutoDetalhesDto produto, string imagemUrl)
     {
         return new ProdutoResponseDto
         {
             Id = produto.Id,
             Nome = produto.Nome,
-            MarcaId = produto.MarcaId,
-            Marca = new(),
-            Categorias = produto.Categorias.Select(c => c.ToResponseDto()).ToList(),
+            Marca = produto.Marca,
+            Categorias = produto.Categorias,
             Atributos = produto.Atributos,
-            CriadoEm = produto.CriadoEm,
-            CriadoPorId = produto.CriadoPorId
+            ImagemUrl = imagemUrl,
+            CriadoEm = produto.CriadoEm
         };
     }
 }

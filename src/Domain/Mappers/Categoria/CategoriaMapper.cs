@@ -9,10 +9,7 @@ public static class CategoriaMapper
         return new CategoriaResponseDto
         {
             Id = categoria.Id,
-            Nome = categoria.Nome,
-            Descricao = categoria.Descricao,
-            CriadoEm = categoria.CriadoEm,
-            CriadoPorId = categoria.CriadoPorId
+            Nome = categoria.Nome
         };
     }
 }

@@ -4,5 +4,5 @@ namespace PagueiBaratoApi.Core.Interfaces;
 
 public interface IProdutoCore
 {
-    Task<ProdutoResponseDto?> ObterPorIdAsync(int id);
+    Task<ProdutoDetalhesDto?> ObterPorIdAsync(int id);
 }

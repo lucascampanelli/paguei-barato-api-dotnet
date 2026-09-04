@@ -15,7 +15,7 @@ public class ProdutoRepository : IProdutoRepository
         _dbContext = dbContext;
     }
 
-    public async Task<ProdutoResponseDto?> ObterPorIdAsync(int id)
+    public async Task<ProdutoDetalhesDto?> ObterPorIdAsync(int id)
     {
         var produtoEntity = await _dbContext.Produtos
             .Include(x => x.Categorias)
@@ -25,6 +25,6 @@ public class ProdutoRepository : IProdutoRepository
         if (produtoEntity == null)
             return null;
 
-        return produtoEntity.ToResponseDto();
+        return produtoEntity.ToDetalhesDto();
     }
 }

@@ -14,6 +14,6 @@ public class ProdutoCore : IProdutoCore
         _produtoRepository = produtoRepository;
     }
 
-    public async Task<ProdutoResponseDto?> ObterPorIdAsync(int id)
+    public async Task<ProdutoDetalhesDto?> ObterPorIdAsync(int id)
         => await _produtoRepository.ObterPorIdAsync(id);
 }

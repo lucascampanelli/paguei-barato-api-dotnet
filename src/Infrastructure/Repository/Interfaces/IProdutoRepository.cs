@@ -4,5 +4,5 @@ namespace PagueiBaratoApi.Infrastructure.Repository.Interfaces;
 
 public interface IProdutoRepository
 {
-    Task<ProdutoResponseDto?> ObterPorIdAsync(int id);
+    Task<ProdutoDetalhesDto?> ObterPorIdAsync(int id);
 }
