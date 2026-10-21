@@ -379,6 +379,41 @@ namespace PagueiBaratoApi.Infrastructure.Migrations
                     b.ToTable("Usuarios");
                 });
 
+            modelBuilder.Entity("PagueiBaratoApi.Domain.Entities.Views.BuscaCatalogoView", b =>
+                {
+                    b.Property<string>("ImagemPath")
+                        .HasColumnType("text");
+
+                    b.Property<int>("ItemId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.ToTable((string)null);
+
+                    b.ToView("vw_BuscaCatalogo", "public");
+                });
+
+            modelBuilder.Entity("PagueiBaratoApi.Domain.Entities.Views.BuscaFacetaView", b =>
+                {
+                    b.Property<string>("Faceta")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("Total")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Valor")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.ToTable((string)null);
+
+                    b.ToView("BuscaFacetasView", (string)null);
+                });
+
             modelBuilder.Entity("PagueiBaratoApi.Domain.Entities.Categoria", b =>
                 {
                     b.HasOne("PagueiBaratoApi.Domain.Entities.Usuario", "CriadoPor")

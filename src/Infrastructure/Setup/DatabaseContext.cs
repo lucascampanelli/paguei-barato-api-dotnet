@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using PagueiBaratoApi.Domain.Entities;
+using PagueiBaratoApi.Domain.Entities.Views;
 using PagueiBaratoApi.Infrastructure.Setup.Configurations;
+using PagueiBaratoApi.Infrastructure.Setup.Configurations.Views;
 
 namespace PagueiBaratoApi.Infrastructure.Setup;
 
@@ -15,6 +17,9 @@ public class DatabaseContext : DbContext
     public virtual DbSet<RefreshToken> RefreshTokens { get; set; }
     public virtual DbSet<Relato> Relatos { get; set; }
     public virtual DbSet<Usuario> Usuarios { get; set; }
+
+    public virtual DbSet<BuscaCatalogoView> BuscaCatalogoView { get; set; }
+    public virtual DbSet<BuscaFacetaView> BuscaFacetaView { get; set; }
 
     public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options)
     {
@@ -38,5 +43,8 @@ public class DatabaseContext : DbContext
         modelBuilder.ApplyConfiguration(new RefreshTokenConfiguration());
         modelBuilder.ApplyConfiguration(new RelatoConfiguration());
         modelBuilder.ApplyConfiguration(new UsuarioConfiguration());
+
+        modelBuilder.ApplyConfiguration(new BuscaCatalogoViewConfiguration());
+        modelBuilder.ApplyConfiguration(new BuscaFacetaViewConfiguration());
     }
 }

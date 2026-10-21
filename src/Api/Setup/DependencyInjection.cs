@@ -23,6 +23,7 @@ public static class DependencyInjection
     public static void AddApplications(this IServiceCollection services)
     {
         services.AddScoped<IMarcaApplication, MarcaApplication>();
+        services.AddScoped<IBuscaApplication, BuscaApplication>();
         services.AddScoped<IProdutoApplication, ProdutoApplication>();
         services.AddScoped<IUsuarioApplication, UsuarioApplication>();
     }
@@ -30,6 +31,7 @@ public static class DependencyInjection
     public static void AddCore(this IServiceCollection services)
     {
         services.AddScoped<IMarcaCore, MarcaCore>();
+        services.AddScoped<IBuscaCore, BuscaCore>();
         services.AddScoped<IProdutoCore, ProdutoCore>();
         services.AddScoped<ISenhaCore, SenhaCore>();
         services.AddScoped<ITokenCore, TokenCore>();
@@ -44,6 +46,7 @@ public static class DependencyInjection
     public static void AddRepositories(this IServiceCollection services)
     {
         services.AddScoped<IMarcaRepository, MarcaRepository>();
+        services.AddScoped<IBuscaRepository, BuscaRepository>();
         services.AddScoped<IProdutoRepository, ProdutoRepository>();
         services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
         services.AddScoped<IUsuarioRepository, UsuarioRepository>();
