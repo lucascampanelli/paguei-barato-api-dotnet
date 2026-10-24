@@ -46,8 +46,8 @@ public class BuscaRepository : IBuscaRepository
         if (!string.IsNullOrWhiteSpace(filtros.Termo))
         {
             where.Append($" AND (\"SearchVector\" @@ websearch_to_tsquery('portuguese', {{{pIndex}}})");
-            where.Append($" OR similarity(lower(\"Nome\"), lower({{{pIndex}}})) > 0.18");
-            where.Append($" OR similarity(lower(\"SearchText\"), lower({{{pIndex}}})) > 0.15)");
+            where.Append($" OR similarity(lower(\"Nome\"), lower({{{pIndex}}})) > 0.10");
+            where.Append($" OR similarity(lower(\"SearchText\"), lower({{{pIndex}}})) > 0.08)");
             
             orderClause = $"ORDER BY ts_rank_cd(\"SearchVector\", websearch_to_tsquery('portuguese', {{{pIndex}}})) DESC, similarity(lower(\"Nome\"), lower({{{pIndex}}})) DESC";
             
@@ -115,8 +115,8 @@ public class BuscaRepository : IBuscaRepository
             {
                 var indiceTermo = parametrosFacetas.Count;
                 filtroFaceta.Append($" AND (\"SearchVector\" @@ websearch_to_tsquery('portuguese', {{{indiceTermo}}})");
-                filtroFaceta.Append($" OR similarity(lower(\"Nome\"), lower({{{indiceTermo}}})) > 0.18");
-                filtroFaceta.Append($" OR similarity(lower(\"SearchText\"), lower({{{indiceTermo}}})) > 0.15)");
+                filtroFaceta.Append($" OR similarity(lower(\"Nome\"), lower({{{indiceTermo}}})) > 0.10");
+                filtroFaceta.Append($" OR similarity(lower(\"SearchText\"), lower({{{indiceTermo}}})) > 0.08)");
                 parametrosFacetas.Add(filtros.Termo);
             }
 
@@ -138,6 +138,7 @@ public class BuscaRepository : IBuscaRepository
             Itens = itens.Select(x => new BuscaCatalogoDto
             {
                 ItemId = x.ItemId,
+                Tipo = x.Tipo,
                 Nome = x.Nome,
                 ImagemPath = x.ImagemPath
             }),
