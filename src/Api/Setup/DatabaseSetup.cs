@@ -11,6 +11,9 @@ public static class DatabaseSetup
         var connectionString = configuration.GetConnectionString("DefaultConnection");
         var builder = new NpgsqlDataSourceBuilder(connectionString);
         builder.EnableDynamicJson();
-        services.AddDbContext<DatabaseContext>(options => options.UseNpgsql(builder.Build()));
+        var dataSource = builder.Build();
+
+        services.AddSingleton(dataSource);
+        services.AddDbContext<DatabaseContext>(options => options.UseNpgsql(dataSource));
     }
 }
