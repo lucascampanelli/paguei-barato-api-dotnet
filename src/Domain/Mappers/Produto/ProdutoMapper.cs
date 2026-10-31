@@ -1,4 +1,5 @@
 using PagueiBaratoApi.Domain.Dtos.Produto;
+using PagueiBaratoApi.Domain.Extensions;
 using PagueiBaratoApi.Domain.Mappers.Categoria;
 using PagueiBaratoApi.Domain.Mappers.Marca;
 
@@ -28,7 +29,9 @@ public static class ProdutoMapper
             Nome = produto.Nome,
             Marca = produto.Marca,
             Categorias = produto.Categorias,
-            Atributos = produto.Atributos,
+            Atributos = produto.Atributos.ToDictionary(
+                atributo => atributo.Key.CapitalizarPrimeiraLetra(),
+                atributo => atributo.Value.CapitalizarPrimeiraLetra()),
             ImagemUrl = imagemUrl,
             CriadoEm = produto.CriadoEm
         };
