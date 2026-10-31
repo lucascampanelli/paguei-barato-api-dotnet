@@ -1,6 +1,7 @@
 using PagueiBaratoApi.Application.Interfaces;
 using PagueiBaratoApi.Core.Interfaces;
 using PagueiBaratoApi.Domain.Dtos.Busca;
+using PagueiBaratoApi.Domain.Mappers.Busca;
 using PagueiBaratoApi.Infrastructure.Adapters.Interfaces;
 
 namespace PagueiBaratoApi.Application;
@@ -32,13 +33,8 @@ public class BuscaApplication : IBuscaApplication
             TamanhoPagina = requestDto.TamanhoPagina
         });
 
-        var itens = await Task.WhenAll(resposta.Itens.Select(async item => new BuscaCatalogoItemResponseDto
-        {
-            ItemId = item.ItemId,
-            Tipo = item.Tipo,
-            Nome = item.Nome,
-            ImagemUrl = await _imagensAdapter.ResolverUrlAsync(item.ImagemPath)
-        }));
+        var itens = await Task.WhenAll(resposta.Itens.Select(async item =>
+            item.ToResponseDto(await _imagensAdapter.ResolverUrlAsync(item.ImagemPath))));
 
         return new BuscaCatalogoResponseDto
         {
