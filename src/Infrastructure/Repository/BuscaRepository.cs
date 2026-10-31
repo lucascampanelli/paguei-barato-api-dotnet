@@ -15,7 +15,7 @@ public class BuscaRepository : IBuscaRepository
         _dbContext = dbContext;
     }
 
-    public async Task<BuscaCatalogoResponseDto> BuscarAsync(BuscaCatalogoRequestDto filtros)
+    public async Task<BuscaCatalogoResultadoResponseDto> BuscarAsync(BuscaCatalogoRequestDto filtros)
     {
         var where = new StringBuilder("1 = 1");
         var parameters = new List<object>();
@@ -132,10 +132,9 @@ public class BuscaRepository : IBuscaRepository
             .FromSqlRaw(facetasSql, parametrosFacetas.ToArray())
             .ToListAsync();
 
-        return new BuscaCatalogoResponseDto
+        return new BuscaCatalogoResultadoResponseDto
         {
-            // Mapeia apenas ItemId, Nome e ImagemPath na resposta final
-            Itens = itens.Select(x => new BuscaCatalogoDto
+            Itens = itens.Select(x => new BuscaCatalogoResultadoDto
             {
                 ItemId = x.ItemId,
                 Tipo = x.Tipo,

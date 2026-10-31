@@ -1,6 +1,6 @@
 namespace PagueiBaratoApi.Domain.Dtos.Busca;
 
-public record BuscaCatalogoDto
+public record BuscaCatalogoResultadoDto
 {
     public int ItemId { get; init; }
     public string Tipo { get; init; } = string.Empty;

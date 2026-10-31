@@ -14,7 +14,7 @@ public class BuscaCore : IBuscaCore
         _buscaRepository = buscaRepository;
     }
 
-    public async Task<BuscaCatalogoResponseDto> BuscarAsync(BuscaCatalogoRequestDto requestDto)
+    public async Task<BuscaCatalogoResultadoResponseDto> BuscarAsync(BuscaCatalogoRequestDto requestDto)
     {
         var normalizedRequestDto = new BuscaCatalogoRequestDto
         {

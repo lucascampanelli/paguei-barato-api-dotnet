@@ -4,5 +4,5 @@ namespace PagueiBaratoApi.Core.Interfaces;
 
 public interface IBuscaCore
 {
-    Task<BuscaCatalogoResponseDto> BuscarAsync(BuscaCatalogoRequestDto requestDto);
+    Task<BuscaCatalogoResultadoResponseDto> BuscarAsync(BuscaCatalogoRequestDto requestDto);
 }
