@@ -42,4 +42,16 @@ public class RefreshTokenRepository : IRefreshTokenRepository
         _dbContext.RefreshTokens.RemoveRange(refreshTokens);
         await _dbContext.SaveChangesAsync();
     }
+
+    public async Task RemoverPorTokenAsync(string refreshToken, Guid usuarioId)
+    {
+        var refreshTokenEntity = await _dbContext.RefreshTokens
+            .FirstOrDefaultAsync(rt => rt.Token == refreshToken && rt.UsuarioId == usuarioId);
+
+        if (refreshTokenEntity == null)
+            return;
+
+        _dbContext.RefreshTokens.Remove(refreshTokenEntity);
+        await _dbContext.SaveChangesAsync();
+    }
 }

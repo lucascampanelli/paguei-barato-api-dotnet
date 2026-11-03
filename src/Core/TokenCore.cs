@@ -57,4 +57,7 @@ public class TokenCore : ITokenCore
 
     public async Task RemoverTodosRefreshTokensDoUsuarioAsync(Guid usuarioId)
         => await _refreshTokenRepository.RemoverTodosDoUsuarioAsync(usuarioId);
+
+    public async Task RemoverRefreshTokenAsync(string refreshToken, Guid usuarioId)
+        => await _refreshTokenRepository.RemoverPorTokenAsync(refreshToken, usuarioId);
 }

@@ -8,9 +8,13 @@ public static class AuthenticationSetup
 {
     public static void ConfigureAuthentication(this IServiceCollection services, IConfiguration configuration)
     {
-        var issuer = configuration["Token:Issuer"] ?? throw new ArgumentNullException("Issuer is not configured");
-        var audience = configuration["Token:Audience"] ?? throw new ArgumentNullException("Audience is not configured");
-        var key = configuration["Token:Key"] ?? throw new ArgumentNullException("Key is not configured");
+        var issuer = configuration["AuthToken:Issuer"] ?? throw new ArgumentNullException("Issuer is not configured");
+        var audience = configuration["AuthToken:Audience"] ?? throw new ArgumentNullException("Audience is not configured");
+        var key = configuration["AuthToken:Key"] ?? throw new ArgumentNullException("Key is not configured");
+        var keyBytes = Encoding.UTF8.GetBytes(key);
+
+        if (keyBytes.Length < 16)
+            throw new ArgumentException(key = "AuthToken:Key must contain at least 16 bytes for HS256.");
 
         services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             .AddJwtBearer(options =>
@@ -23,7 +27,7 @@ public static class AuthenticationSetup
                     ValidateIssuerSigningKey = true,
                     ValidIssuer = issuer,
                     ValidAudience = audience,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key))
+                    IssuerSigningKey = new SymmetricSecurityKey(keyBytes)
                 };
             });
     }

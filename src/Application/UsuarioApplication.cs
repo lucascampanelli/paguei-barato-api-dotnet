@@ -106,4 +106,7 @@ public class UsuarioApplication : IUsuarioApplication
             RefreshToken = newRefreshToken
         };
     }
+
+    public Task RevogarTokenAsync(UsuarioRevalidarTokenRequestDto requestDto, Guid usuarioId)
+        => _tokenCore.RemoverRefreshTokenAsync(requestDto.RefreshToken, usuarioId);
 }

@@ -1,6 +1,8 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PagueiBaratoApi.Application.Interfaces;
 using PagueiBaratoApi.Domain.Dtos.Usuario;
+using System.Security.Claims;
 
 namespace PagueiBaratoApi.Api.Controllers;
 
@@ -34,5 +36,17 @@ public class UsuarioController : ControllerBase
     {
         var result = await _usuarioApplication.RevalidarTokenAsync(requestDto);
         return Ok(result);
+    }
+
+    [Authorize]
+    [HttpPost("revogar-token")]
+    public async Task<IActionResult> RevogarTokenAsync([FromBody] UsuarioRevalidarTokenRequestDto requestDto)
+    {
+        var claim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        if (claim == null || !Guid.TryParse(claim, out var usuarioId))
+            return Unauthorized();
+
+        await _usuarioApplication.RevogarTokenAsync(requestDto, usuarioId);
+        return NoContent();
     }
 }

@@ -9,4 +9,5 @@ public interface ITokenCore
     public Task<RefreshTokenDto?> ObterRefreshTokenPorTokenAsync(string refreshToken);
     public Task<RefreshTokenDto> SalvarRefreshTokenAsync(RefreshTokenDto refreshTokenDto);
     public Task RemoverTodosRefreshTokensDoUsuarioAsync(Guid usuarioId);
+    public Task RemoverRefreshTokenAsync(string refreshToken, Guid usuarioId);
 }

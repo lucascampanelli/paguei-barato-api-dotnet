@@ -7,4 +7,5 @@ public interface IRefreshTokenRepository
     Task<RefreshTokenDto?> ObterPorTokenAsync(string refreshToken);
     Task<RefreshTokenDto> SalvarAsync(RefreshTokenDto refreshTokenDto);
     Task RemoverTodosDoUsuarioAsync(Guid usuarioId);
+    Task RemoverPorTokenAsync(string refreshToken, Guid usuarioId);
 }
